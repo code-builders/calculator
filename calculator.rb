@@ -6,36 +6,58 @@ command = ""
     command = gets.chomp.downcase
 
     if command == "add" || command == "+"
-      puts "you want to add, Yay!"
       puts "Which numbers would you like to add?"
       n1 = gets.chomp.to_i
       n2 = gets.chomp.to_i
+    until (n1 != 0) || (n1.to_s != "0") && (n2 != 0) || (n2.to_s != "0")
+      puts "One or more of those numbers was not valid, please enter numbers only"
+      n1 = gets.chomp.to_i
+      n2 = gets.chomp.to_i
+    end
       answer = n1 + n2
-      puts "the sum is...#{answer}!"
+      puts "The sum of #{n1} + #{n2} = #{answer}!"
+
     elsif command == "subtract" || command == "-"
-      puts "you want to subtract, Yay!"
       puts "Which numbers would you like to subtract?"
       n1 = gets.chomp.to_i
       n2 = gets.chomp.to_i
+      until (n1 != 0) || (n1.to_s != "0") && (n2 != 0) || (n2.to_s != "0")
+        puts "One or more of those numbers was not valid, please enter numbers only"
+        n1 = gets.chomp.to_i
+        n2 = gets.chomp.to_i
+      end
       answer = n1 - n2
-      puts "the difference is...#{answer}!"
+      puts "The difference of #{n1} - #{n2} = #{answer}!"
+
     elsif command == "multiply" || command == "*" || command == "x"
-      puts "you want to multiply, Yay!"
       puts "Which numbers would you like to multiply?"
       n1 = gets.chomp.to_i
       n2 = gets.chomp.to_i
+      until (n1 != 0) || (n1.to_s != "0") && (n2 != 0) || (n2.to_s != "0")
+        puts "One or more of those numbers was not valid, please enter numbers only"
+        n1 = gets.chomp.to_i
+        n2 = gets.chomp.to_i
+      end
       answer = n1 * n2
-      puts "the product is...#{answer}!"
+      puts "The product of #{n1} * #{n2} = #{answer}!"
+
     elsif command == "divide" || command == "/"
-      puts "you want to divide, Yay!"
       puts "Which numbers would you like to divide?"
       n1 = gets.chomp.to_i
       n2 = gets.chomp.to_i
+      until (n1 != 0) || (n1.to_s != "0") && (n2 != 0) || (n2.to_s != "0")
+        puts "One or more of those numbers was not valid, please enter numbers only"
+        n1 = gets.chomp.to_i
+        n2 = gets.chomp.to_i
+      end
       answer = n1.to_f / n2.to_f
-      puts "the quotent is...#{answer}!"
+      puts "The quotent of #{n1} / #{n2} = #{answer}!"
+
     elsif command == "exit".downcase
       puts "Good-bye, Ciao, Smell ya later!, Sayonara!, Adios!"
+
     else
       puts "I don't know how to #{command}, please choose from 'add', 'subtract', 'multiply', 'divide'."
+
     end
   end
