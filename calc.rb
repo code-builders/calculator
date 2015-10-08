@@ -7,7 +7,13 @@ puts "Hello, I'm here for your basic mathematial calculation needs. What is the 
 
 num1 = gets.chomp
 
+until num1.to_i != 0
+  puts "Please enter a valid number"
+  num1 = gets.chomp
+end
+
 num1=num1.to_i
+
 
 puts "What operator would you like to use?"
 
@@ -28,13 +34,13 @@ num2=num2.to_i
 
 if command == "add" || command== "+" || command== "plus"
   puts "you want to add #{num1} and #{num2}"
-  puts num1 + num2
+  puts "#{num1} + #{num2} = #{num1+num2}"
 elsif command == "subtract" || command == "-"
     puts "you want to subtract #{num1} from #{num2}"
-    puts num1 - num2
+    puts "#{num1} - #{num2} = #{num1-num2}"
 elsif command == "multiply" || command == "*"
   puts "you want to multiply #{num1} and #{num2}"
-  puts num1 * num2
+  puts "#{num1} * #{num2} = #{num1*num2}"
 elsif command == "divide" || command == "/"
   puts "you want to divide #{num1} and #{num2}"
   puts "#{num1} / #{num2} = #{num1/num2}"
