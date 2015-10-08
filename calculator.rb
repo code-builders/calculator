@@ -8,6 +8,9 @@ until calc_runs == 1000
 
 input = gets.chomp.downcase
 
+  #these blocks for each type of operation are so long! How can I consolidate
+  #all operations into fewer lines? Can I group all possible operations into
+  #one section, and possible outputs into another?
   if input == "add" || input == "+"
     puts "Great! I can add. Enter two numbers to be added:"
     num1 = gets.chomp.to_i
@@ -51,6 +54,26 @@ input = gets.chomp.downcase
     puts "Please enter another command or 'exit' to stop."
     calc_runs = calc_runs + 1
 
+  elsif input == "exponent" || input == "^"
+    puts "Great! I can do exponents. Enter base, then exponent:"
+    num1 = gets.chomp.to_i
+    num2 = gets.chomp.to_i
+    calculator_output = num1 ** num2
+    puts calculator_output
+    puts "#{num1} ** #{num2} = #{calculator_output}\n"
+    puts "Please enter another command or 'exit' to stop."
+    calc_runs = calc_runs + 1
+
+  elsif input == "modulo" || input == "%"
+    puts "Great! I can do modulos. Enter two numbers and I'll show remainder"
+    num1 = gets.chomp.to_i
+    num2 = gets.chomp.to_i
+    calculator_output = num1 % num2
+    puts calculator_output
+    puts "#{num1} % #{num2} = #{calculator_output}\n"
+    puts "Please enter another command or 'exit' to stop."
+    calc_runs = calc_runs + 1
+
   elsif input == "exit"
     puts "Goodbye!"
     break
@@ -67,10 +90,11 @@ end
 
 ##Optional Enhancements
 #Y Print out the formula in addition to the result, i.e. 2 + 2 = 4
-#  Add support for computing exponents (2^4 = 2 * 2 * 2 * 2 = 16).
-#  Add support for the modulo operator (10 % 3 = 1).
+#Y Add support for computing exponents (2^4 = 2 * 2 * 2 * 2 = 16).
+#Y Add support for the modulo operator (10 % 3 = 1).
 #  Gracefully handle unexpected user input:
 #  What happens if the user input is nil (i.e., the user just pressed enter)?
+#### try something like input.is_integer? = false
 #  What happens if the user tries to add hotdog to elephant?
 #  Make your program know when it needs to return an integer versus a float.
 #  Add support for parentheticals, i.e. 10 / (5 + 5) = 1.
@@ -79,25 +103,26 @@ end
 ## DANIEL QUESTIONS
 ## I reset 'while/until' loop to go off of calc_runs instead of calculator_output
 ## explore the pros/cons of these two approaches for running loops
-#
-#
-# can we store input types (add/sub/mult/div) in an array and call them in the
+
+## can we store input types (add/sub/mult/div) in an array and call them in the
 # conditionals so that we don't have to do so many elsifs?
 #   input_types = []
 
-# I want to add code to repeat ask cycle (offer to do more math) after first #calculation. Something like...
-#
-# puts "Would you like to do any more math?"
-# input = gets.chomp.downcase
-#
-# while true
-#   if input == "yes"
-#     puts "What type of math would you like to do?"
-#   elsif input == "no"
-#     puts "Goodbye!"
-#     break
-#   end
-#   # else
-#   #   puts "Please answer yes or no."
-#   # end
-# end
+## I want to add code to repeat ask cycle (offer to do more math) after
+# first calculation, without repeating the prompt in each operation block.
+# Something like...
+
+  # puts "Would you like to do any more math?"
+  # input = gets.chomp.downcase
+  #
+  # while true
+  #   if input == "yes"
+  #     puts "What type of math would you like to do?"
+  #   elsif input == "no"
+  #     puts "Goodbye!"
+  #     break
+  #   end
+  #   # else
+  #   #   puts "Please answer yes or no."
+  #   # end
+  # end
