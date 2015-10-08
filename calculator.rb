@@ -19,7 +19,7 @@ command = ""
       n2 = gets.chomp.to_i
       answer = n1 - n2
       puts "the difference is...#{answer}!"
-    elsif command == "multiply" || command == "*" || command == "x".downcase
+    elsif command == "multiply" || command == "*" || command == "x"
       puts "you want to multiply, Yay!"
       puts "Which numbers would you like to multiply?"
       n1 = gets.chomp.to_i
@@ -33,11 +33,9 @@ command = ""
       n2 = gets.chomp.to_i
       answer = n1.to_f / n2.to_f
       puts "the quotent is...#{answer}!"
+    elsif command == "exit".downcase
+      puts "Good-bye, Ciao, Smell ya later!, Sayonara!, Adios!"
     else
       puts "I don't know how to #{command}, please choose from 'add', 'subtract', 'multiply', 'divide'."
     end
   end
-
-if command = "exit".downcase
-puts "You want to exit, Ciao!"
-end
