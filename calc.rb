@@ -1,12 +1,18 @@
 # command
-command = ""
-until command == "exit"
+num1= ""
+num2= ""
+command= ""
+
+while num1 != "exit" && num2 != "exit" && command != "exit"
+
+
 
 # number variables
 puts "Hello, I'm here for your basic mathematial calculation needs. What is the first number you would like to use?"
 
 num1 = gets.chomp
 
+while num1== "0"
 until num1.to_i != 0
   puts "Please enter a valid number"
   num1 = gets.chomp
@@ -46,6 +52,8 @@ elsif command == "divide" || command == "/"
   puts "#{num1} / #{num2} = #{num1/num2}"
 else
   puts "I don't know how to #{command}. Please provide me with a basic equation you would like to calcualate."
+end
+
 end
 
 end
