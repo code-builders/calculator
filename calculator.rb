@@ -1,31 +1,43 @@
+
 command = ""
-while command != "exit"
-  puts "Hello, I'm a calculator, what would you like to do?"
+  while command != "exit".downcase
+    puts "Hello, I'm a calculator, what would you like to do? To exit please write 'Exit'"
 
-  command = gets.chomp
+    command = gets.chomp.downcase
 
-  if command == "add" || command == "+"
-    puts "you want to add, Yay!"
-  elsif command == "subtract" || command == "-"
-    puts "you want to subtract, Yay!"
-  elsif command == "multiply" || command == "*" || command == "x".downcase
-    puts "you want to multiply, Yay!"
-  elsif command == "divide" || command == "/"
-    puts "you want to divide, Yay!"
-  else
-    puts "I don't know how to #{command}"
+    if command == "add" || command == "+"
+      puts "you want to add, Yay!"
+      puts "Which numbers would you like to add?"
+      n1 = gets.chomp.to_i
+      n2 = gets.chomp.to_i
+      answer = n1 + n2
+      puts "the sum is...#{answer}!"
+    elsif command == "subtract" || command == "-"
+      puts "you want to subtract, Yay!"
+      puts "Which numbers would you like to subtract?"
+      n1 = gets.chomp.to_i
+      n2 = gets.chomp.to_i
+      answer = n1 - n2
+      puts "the difference is...#{answer}!"
+    elsif command == "multiply" || command == "*" || command == "x".downcase
+      puts "you want to multiply, Yay!"
+      puts "Which numbers would you like to multiply?"
+      n1 = gets.chomp.to_i
+      n2 = gets.chomp.to_i
+      answer = n1 * n2
+      puts "the product is...#{answer}!"
+    elsif command == "divide" || command == "/"
+      puts "you want to divide, Yay!"
+      puts "Which numbers would you like to divide?"
+      n1 = gets.chomp.to_i
+      n2 = gets.chomp.to_i
+      answer = n1.to_f / n2.to_f
+      puts "the quotent is...#{answer}!"
+    else
+      puts "I don't know how to #{command}, please choose from 'add', 'subtract', 'multiply', 'divide'."
+    end
   end
 
-numbers =""
-
-while numbers != "I don't know how to #{command}"
-  puts "What numbers would you like to #{command}? One at a time please!"
-
-  number_1 = gets.chomp
-  number_2 = gets.chomp
-
-  puts "you want to #{command} #{number_1} and #{number_2}"
-end
-
+if command = "exit".downcase
 puts "You want to exit, Ciao!"
 end
