@@ -1,18 +1,29 @@
-command = ""
-until command == "exit"
-  puts "Hello, I'm a calculator, what would you like to do?"
+while true 
+  puts "Hello, I'm a calculator! Please add or subtract numbers in one line with spaces."
 
-  command = gets.chomp
+  response = gets.chomp.split
 
-  if command == "add" || command == "+"
-    puts "you want to add"
-  elsif command == "subtract" || command == "-"
-    puts "you want to subtract"
-  elsif command == "multiply" || command == "*"
-    puts "you want to multiply"
+  answer = 0
+  
+  if response.include?("add") || response.include?("+")
+    response.each do |string|
+      if string.to_i != 0
+        answer = string.to_i + answer 
+      end
+    end
+  elsif response.include?("subtract") || response.include?("-")
+    answer = response[0]
+    response[1..-1].each do |string|
+      if string.to_i != 0
+        answer = answer.to_i - string.to_i
+      end
+    end
+  elsif response[0] == "done" || response[0] == "exit"
+    exit
   else
-    puts "I don't know how to #{command}"
+    puts "I'm not sure what to do, could you be more specific?"
   end
-end
 
-puts "I'm tired, goodbye."
+  puts "Let me see... the result is #{answer}"
+
+end
