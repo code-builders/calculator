@@ -1,61 +1,42 @@
 # command
-num1= ""
-num2= ""
-command= ""
+command = ""
+while command != "exit".downcase
+    puts "Hello, I'm a calculator, what would you like to do? To exit please write 'Exit'"
+    command = gets.chomp.downcase
 
-while num1 != "exit" && num2 != "exit" && command != "exit"
+    if command == "add" || command == "+"
+         puts "What's the first number you would like to add?"
+         n1 = gets.chomp.to_i
+         puts "What's the second number you would like to add?"
+         n2 = gets.chomp.to_i
+         puts "#{n1} + #{n2} = #{n1 + n2}"
+    end
+
+    if command == "subtract" || command == "-"
+      puts "What's your first number?"
+      n1 = gets.chomp.to_i
+      puts "What's your second number"
+      n2 = gets.chomp.to_i
+      puts "#{n1} - #{n2} = #{n1 - n2}"
+    end
+
+    if command == "multiply" || command == "*" || command == "x"
+      puts "What's the first number you would like to multiply?"
+      n1 = gets.chomp.to_i
+      puts "What's the second number you would like to multiply?"
+      n2 = gets.chomp.to_i
+      puts "#{n1} * #{n2} = #{n1 * n2}"
+    end
+
+    if command == "divide" || command == "/"
+      puts "What's your first number"
+      n1 = gets.chomp.to_i
+      puts "What's your second number"
+      n2 = gets.chomp.to_i
+      puts "#{n1} * #{n2} = #{n1 * n2}"
+    end
 
 
-
-# number variables
-puts "Hello, I'm here for your basic mathematial calculation needs. What is the first number you would like to use?"
-
-num1 = gets.chomp
-
-while num1== "0"
-until num1.to_i != 0
-  puts "Please enter a valid number"
-  num1 = gets.chomp
-end
-
-num1=num1.to_i
-
-
-puts "What operator would you like to use?"
-
-command = gets.chomp
-
-until command == "add" || command == "+" || command ==  "subtract" || command == "-" || command == "multiply" || command == "*" || command == "divide" || command == "/"
-  puts "Please give me a valid operator (+,-,*,/). What operator would you like to use?"
-  command = gets.chomp
-  puts "Thank you."
-end
-
-  puts "What is your next number?"
-
-
-num2 = gets.chomp
-
-num2=num2.to_i
-
-if command == "add" || command== "+" || command== "plus"
-  puts "you want to add #{num1} and #{num2}"
-  puts "#{num1} + #{num2} = #{num1+num2}"
-elsif command == "subtract" || command == "-"
-    puts "you want to subtract #{num1} from #{num2}"
-    puts "#{num1} - #{num2} = #{num1-num2}"
-elsif command == "multiply" || command == "*"
-  puts "you want to multiply #{num1} and #{num2}"
-  puts "#{num1} * #{num2} = #{num1*num2}"
-elsif command == "divide" || command == "/"
-  puts "you want to divide #{num1} and #{num2}"
-  puts "#{num1} / #{num2} = #{num1/num2}"
-else
-  puts "I don't know how to #{command}. Please provide me with a basic equation you would like to calcualate."
-end
 
 end
-
-end
-
-puts "I'm tired, adios bitchachos."
+puts "I'm tired. Adios bitchachos."
