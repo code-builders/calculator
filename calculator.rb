@@ -1,7 +1,4 @@
-# command= ""
-# while command != "exit" #until command can also be used and then flip operation
- # command = ""
-# while command != "exit"
+
 puts "Hello I'm a calculator, What do you want to do?"
 command = gets.chomp.downcase
 
