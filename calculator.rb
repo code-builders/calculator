@@ -13,13 +13,23 @@ input = gets.chomp.downcase
   #one section, and possible outputs into another?
   if input == "add" || input == "+"
     puts "Great! I can add. Enter two numbers to be added:"
-    num1 = gets.chomp.to_i
-    num2 = gets.chomp.to_i
-    calculator_output = num1 + num2
-    puts calculator_output #this is redundant with the formula below. OK to axe?
-    puts "#{num1} + #{num2} = #{calculator_output}\n"
+    num1 = gets.chomp
+    num1_i = num1.to_i
+    num2 = gets.chomp
+    num2_i = num2.to_i
+    calculator_output = num1.to_i + num2.to_i
+
+      if ((num1 == "O" || num2 == "0") && (num1_i != 0 || num2_i !=0))
+        puts calculator_output
+        puts "#{num1} + #{num2} = #{calculator_output}\n"
+      elsif
+        (num1_i == 0 || num2_i == 0)
+        puts "one of these is not an integer. enter 2 integers."
+      else (num1 == "O" || num2 == "0")
+        puts calculator_output
+        puts "#{num1} + #{num2} = #{calculator_output}\n"
+      end
     puts "Please enter another command or 'exit' to stop."
-    calc_runs = calc_runs + 1
     #feels redundant to repeat calc_runs counter under each block.
     #also redundant to repeat the 'enter again or exit' prompt in each block.
     #how can I consolidate these?
